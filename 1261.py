@@ -17,7 +17,7 @@ for i in range(M):
 dydx=[(-1,0),(0,1),(1,0),(0,-1)]
 INF=int(1e9)
 distance=[[INF]*N for i in range(M)]
-def djikstra(i,j):
+def dijkstra(i,j):
     q=[]
     heapq.heappush(q,(0,i,j))
     distance[i][j]=0
@@ -39,4 +39,4 @@ def djikstra(i,j):
                     if distance[ny][nx]>broken:
                         distance[ny][nx]=broken
                         heapq.heappush(q,(broken,ny,nx))
-print(djikstra(0,0))
+print(dijkstra(0,0))
