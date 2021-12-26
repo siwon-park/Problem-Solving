@@ -43,7 +43,6 @@ visited=[False]*(N+1)
 q=deque([(INF,s)]) # 처음에는 금빼빼로를 무한개 들고 갈 수 있다고 가정
 cost_table=[INF]*(N+1)
 visited[s]=True
-cost_table[s]=INF
 while q:
     cur_cost,cur=q.popleft()
     for nxt,nxt_cost in graph[cur]:
