@@ -21,7 +21,7 @@ def dijkstra(S):
     q=[]
     heapq.heappush(q,(0,0,S,S))
     distance=[[INF for j in range(K+1)] for i in range(N+1)]
-    distance[0][0]=0
+    distance[S][0]=0
     while q:
         t,h,cur,last=heapq.heappop(q)
         if cur==E:
