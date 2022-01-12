@@ -23,8 +23,8 @@ distance=[[INF]*M for i in range(N)]
 q=[]
 for i in range(N):
     graph.append(list(map(int,input().split())))
-    distance[i][M-1]=graph[i][M-1]
-    heapq.heappush(q,(graph[i][M-1],i,M-1,i))
+    distance[i][M-1]=graph[i][M-1] # 목적지에서 출발하므로 목적지의 최단거리 테이블 값을 목적지 값으로 초기화 시켜준다
+    heapq.heappush(q,(graph[i][M-1],i,M-1,i)) # 목적지 값, y좌표, x좌표, 목적지 번호
  
 dydx=[(-1,0),(0,1),(1,0),(0,-1)]
 
@@ -34,8 +34,8 @@ def dijkstra(q):
         dist,y,x,no=heapq.heappop(q)
         if distance[y][x]<dist:
             continue
-        if x==0:
-            finish[no]+=1
+        if x==0: # x좌표가 0이라면 출발지에 도착한 것이므로
+            finish[no]+=1 # 해당 목적지 번호를 finish 배열 인덱스로하여 +=1을 해준다
         for dy,dx in dydx:
             ny,nx=y+dy,x+dx
             if 0<=ny<N and 0<=nx<M:
