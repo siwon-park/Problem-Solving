@@ -1,4 +1,4 @@
-//Hello World(2557)
+//Hello World(2557번)
 //////////////////////////////////////////////////
     // 문제: https://www.acmicpc.net/problem/2557
     // 처음 풀어본 java 문제
