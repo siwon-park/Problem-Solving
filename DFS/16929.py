@@ -31,7 +31,6 @@ def dfs(y, x, vt, i, j, k):
                 return True
     return False
 
-
 def check():
     for i in range(N):
         for j in range(M):
@@ -40,6 +39,5 @@ def check():
             if flag:
                 return "Yes"
     return "No"
-
 
 print(check())
