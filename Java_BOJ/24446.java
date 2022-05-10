@@ -5,7 +5,6 @@
   // 질문 게시판에 올려져 있는 반례가 아니었다면 아마 좀 많은 시간을 고생했을 것 같다.
   // 틀렸을 경우 출력초과를 받는 것 같다.
   // BFS탐색을 통한 방문 트리의 깊이를 구하는 문제이므로, 현재 큐의 길이만큼 요소를 뽑고, 그 길이만큼 뽑는 동안 트리의 깊이는 같아야한다.
-  // 
 ///////////////////////////////////////////////////////////////////////////
 import java.util.*;
 import java.io.*;
@@ -67,7 +66,7 @@ public class Main {
       int depth = (visited[i] != null) ? visited[i] : -1; 
       System.out.println(depth);
     }
-    System.out.println(Arrays.toString(visited));
+    // System.out.println(Arrays.toString(visited));
     br.close();
   }
 }
