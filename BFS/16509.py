@@ -50,7 +50,7 @@ def bfs():
                 if 0 <= ny < 10 and 0 <= nx < 9 and d != 2 and (ny, nx) == (R2, C2):
                     flag = False
                     break
-                # 최종 목적지가 빈 칸일 경우에만 큐에 삽입
+                # 최종 목적지가 빈 칸 또는 일 경우에만 큐에 삽입
                 if 0 <= ny < 10 and 0 <= nx < 9 and d == 2 and flag and visited[y][x] + 1 < visited[ny][nx]:
                     visited[ny][nx] = visited[y][x] + 1
                     q.append((ny, nx))
