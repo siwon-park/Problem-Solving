@@ -4,6 +4,6 @@
 
 ## Index
 
-[백준]
+[백준](https://github.com/siwon-park/Problem_Solving/tree/main/Baekjoon_Solve)
 
-[프로그래머스]
+[프로그래머스](https://github.com/siwon-park/Problem_Solving/tree/main/Programmers_Solve)
