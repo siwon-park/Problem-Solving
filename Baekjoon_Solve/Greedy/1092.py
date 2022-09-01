@@ -66,3 +66,19 @@ def binary_search(l, r):
     return ans
 
 print(binary_search(1, m))
+
+############################################################################
+# 훨씬 직관적인 풀이(우선 순위 큐 사용)
+def solve(cranes, boxes):
+    if max(cranes) < max(boxes):
+        return -1
+
+    cranes = sorted(cranes)
+    crane_heap = []
+    for box in sorted(boxes, reverse=True):
+        while cranes and cranes[-1] >= box:
+            heappush(crane_heap, (0, cranes.pop()))
+        count, crane = heappop(crane_heap)
+        heappush(crane_heap, (count + 1, crane))
+
+    return max(crane_heap)[0]
