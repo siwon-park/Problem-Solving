@@ -43,3 +43,40 @@ if ans % 2:
     print("Yes")
 else:
     print("No")
+
+########################## bottom-up DP ########################
+# bottom-up dp로 풀어보았다
+# 탐색 중 루트에 대해서만 예외처리를 해주니까 이상없이 통과할 수 있었다. 루트의 높이를 1로 잡으니까 바텀업을 하더라도 누적된 값이 꼬여서 틀렸던 것 같다.
+# 유의미한 시간차가 없어서 이게 DP로 올바르게 푼 게 맞나 싶기도 하다...
+import sys
+sys.setrecursionlimit(int(1e5))
+input = sys.stdin.readline
+
+N = int(input())
+tree = [[] for _ in range(N + 1)]
+for _ in range(N - 1):
+    a, b = map(int, input().split())
+    tree[a].append(b)
+    tree[b].append(a)
+
+# 리프 to 루트의 합이 짝수면 No, 홀수면 Yes
+visited = [0] * (N + 1)
+
+
+def dfs(d, cur):
+    if visited[cur]:
+        return d
+    visited[cur] = d
+    dist = 0
+    for nxt in tree[cur]:
+        if not visited[nxt] and nxt != 1:
+            dist += dfs(d + 1, nxt)
+    visited[cur] = max(dist, visited[cur])
+    return visited[cur]
+
+dfs(0, 1)
+
+if visited[1] % 2:
+    print("Yes")
+else:
+    print("No")
