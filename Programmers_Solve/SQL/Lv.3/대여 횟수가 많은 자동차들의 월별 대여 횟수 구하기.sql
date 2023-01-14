@@ -1,0 +1,16 @@
+-- 대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기
+-- 동일한 조건으로 GROUP BY를 하는 문제
+-- 도저히 안 풀려서 다른 사람의 풀이를 참고하니, 거의 다 풀어놓고 헤메고 있었다.
+-- 조인 당한 원본 칼럼도 8월 ~ 10월로 조건이 필요하고, GROUP BY로 묶어줘야 했다.
+
+SELECT MONTH(crh1.START_DATE) AS MONTH, crh1.CAR_ID, COUNT(crh1.HISTORY_ID) AS RECORDS
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY crh1
+INNER JOIN (SELECT MONTH(START_DATE) AS MONTH, CAR_ID, COUNT(HISTORY_ID) AS RECORDS
+            FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+            WHERE MONTH(START_DATE) BETWEEN 8 AND 10
+            GROUP BY CAR_ID
+            HAVING RECORDS >= 5) crh2
+ON crh1.CAR_ID = crh2.CAR_ID
+WHERE MONTH(crh1.START_DATE) BETWEEN 8 AND 10 -- 
+GROUP BY crh1.CAR_ID, MONTH(crh1.START_DATE)
+ORDER BY MONTH(crh1.START_DATE) ASC, crh1.CAR_ID DESC;
