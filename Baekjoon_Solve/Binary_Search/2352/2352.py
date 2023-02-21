@@ -18,7 +18,7 @@ p = list(map(int, input().rstrip().split()))
 
 # lower_bound
 def lower_bound(array, start, end, target):
-    idx = 0
+    idx = n
     while start <= end:
         mid = (start + end) // 2
         if target <= array[mid]:
