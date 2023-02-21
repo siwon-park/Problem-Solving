@@ -19,7 +19,7 @@ public class Main {
                 coins[i] = Integer.parseInt(st.nextToken());
             }
             int M = Integer.parseInt(br.readLine());
-            int[] dp = new int[M + 1];
+            int[] dp = new int[10001]; // M + 1로 크기를 설정하면 X => N개의 동전 중 M보다 클 경우 인덱스 에러 발생
 
             for (int n=1; n<N+1; n++) {
                 int coin = coins[n];
