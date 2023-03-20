@@ -22,8 +22,8 @@ https://www.acmicpc.net/problem/16719
 
 | 언어   | 메모리   | 실행 시간(ms) | 시간복잡도 | 공간복잡도 | 풀이 시간 | 시도 횟수 | 해설 참고          |
 | ------ | -------- | ------------- | ---------- | ---------- | --------- | --------- | ------------------ |
-| Python |          |               |            |            |           |           |                    |
-| Java   | 14256 KB | 124 ms        | O(logN)    | O(N)       | 17분      | 1         | :white_check_mark: |
+| Python | 31256 KB | 40 ms         | O(logN)    | O(N)       | 20분      | 1         | :white_check_mark: |
+| Java   | 14256 KB | 124 ms        | O(logN)    | O(N)       | 27분      | 1         | :white_check_mark: |
 | Kotlin |          |               |            |            |           |           |                    |
 
 <br>
