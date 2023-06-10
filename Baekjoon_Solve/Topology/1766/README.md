@@ -30,8 +30,8 @@ https://www.acmicpc.net/problem/1766
 
 | 언어   | 메모리   | 실행 시간(ms) | 시간복잡도 | 공간복잡도 | 풀이 시간 | 시도 횟수 | 해설 참고            |
 | ------ | -------- | ------------- | ---------- | ---------- | --------- | --------- | -------------------- |
-| Python | 39848 KB | 236 ms        | O(NlogN)   | O(N)       | 30분      | 1         | :white_large_square: |
-| Java   | 45460 KB | 584 ms        | O(NlogN)   | O(N)       | 20분      | 1         | :white_large_square: |
+| Python | 39848 KB | 236 ms        | O(NlogN)   | O(N + M)   | 30분      | 1         | :white_large_square: |
+| Java   | 45460 KB | 584 ms        | O(NlogN)   | O(N + M)   | 20분      | 1         | :white_large_square: |
 | Kotlin |          |               |            |            |           |           |                      |
 
 <br>
