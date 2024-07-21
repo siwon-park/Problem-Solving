@@ -1,0 +1,5 @@
+# 특별한 가지 (31668번)
+n = int(input().rstrip())
+m = int(input().rstrip())
+k = int(input().rstrip())
+print((m // n) * k)
