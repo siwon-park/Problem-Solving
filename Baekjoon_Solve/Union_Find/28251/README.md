@@ -21,7 +21,7 @@ https://www.acmicpc.net/problem/28251
 - 이는 누적합의 개념을 활용하면 된다. 그룹 g1과 그룹 g2가 있고 두 그룹이 합칠 때, 나도리합은 g1에 속한 원소들의 누적합 x g2에 속한 원소들의 누적합 + g1의 나도리합 + g2의 나도리합이다.
 - 크기가 2인 배열 results가 있을 때, results[0] = 그룹에 속한 원소들의 누적합, results[1] = 그룹의 나도리합이라고 할 때 아래 예시와 같이 계산할 수 있다.
 
-![image](https://github.com/user-attachments/assets/88d0ec13-5782-4c51-ba36-355cba71b5b7)
+![image](https://github.com/user-attachments/assets/d7055b57-4826-4cd0-a709-cc97678a3797)
 
 <br>
 
