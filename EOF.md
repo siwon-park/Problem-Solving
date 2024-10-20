@@ -2,7 +2,15 @@
 
 > EOF란 End Of File의 줄임말로, 더 이상 읽을 수 있는 데이터가 없음을 의미한다.
 
-## 1. Java EOF(End Of File) 처리하기
+PS를 하다보면 테스트 케이스 개수에 대한 입력을 별도로 받지 않는 경우가 있는데, 이 때 EOF 처리를 별도로 해줘야만 한다.
+
+각 언어별로 EOF를 처리하는 방법에 차이가 있기 때문에 숙지하는 것이 필요하다.
+
+참고로 코딩 테스트에서는 쓸 일이 없다.
+
+EOF 처리의 핵심은 Null에 대한 처리이다.
+
+## 1. Java
 
 Java는 Scanner와 BufferedReader를 활용해서 EOF를 처리할 수 있다.
 
@@ -51,7 +59,7 @@ while (!(S = br.readLine()).equals("")) {
 
 <br>
 
-## 2. Python EOF 처리하기
+## 2. Python
 
 Python의 경우 EOF를 try-catch구문으로 해결할 수 있다.
 
@@ -65,3 +73,29 @@ while True:
     except EOFError:
         break
 ```
+
+<br>
+
+## 3. Kotlin
+
+Kotlin의 경우 대부분의 문법이 java와 비슷하지만, EOF 처리에는 차이가 있다.
+
+우선 java에서와 같이 while 문의 조건부 안에 변수에 값을 대입하는 문법을 허용하지 않는다.
+
+### 1) ?:
+
+> 엘비스(elvis) 연산자; 연산자 앞의 값이 null이면 연산자 뒤의 값(구문)을 반환한다.
+
+엘비스(elvis) 연산자로 EOF를 처리할 수 있다.
+
+```kotlin
+    while (true) {
+        val line: String = br.readLine() ?: break
+        val st: StringTokenizer = StringTokenizer(line)
+        
+    }
+```
+
+코틀린에서는 기본적으로 null check를 하지 않는다. 타입 바로 뒤에 `?`를 붙여서 null이 들어올 수 있는 값이라고 명시하지 않는 이상 null이 기본적으로 불가능하다고 보기 때문이다. (단, 이는 null이 아님을 단언하는 것이 아님)
+
+※ 참고로 `val st: StringTokenizer = StringTokenizer(br.readLine()) ?: break`와 같은 구문은 EOF 처리를 정상적으로 할 수 없다. 왜냐하면 br.readLine()이 null인 것이지 st가 null인 것이 아니기 때문이다. 이대로 사용하면 NullPointerException이 발생한다.
