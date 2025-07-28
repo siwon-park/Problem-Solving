@@ -76,6 +76,8 @@ while True:
 
 ※ `input = sys.stdin.readline`이 있다면 해당 라인을 제거하고 제출해볼 것.
 
+- 이유는 sys.stdin.readline는 개행(`\n`)을 빈 줄 혹은 빈 문자열로 인식하지 않고 처리하기 때문.  sys.stdin.readline을 사용했을 때, input().rstrip()으로 rstrip()을 통해 개행을 처리해주는 것과 같은 원리.
+
 <br>
 
 ## 3. Kotlin
