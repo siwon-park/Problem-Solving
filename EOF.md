@@ -74,6 +74,8 @@ while True:
         break
 ```
 
+※ `input = sys.stdin.readline`이 있다면 해당 라인을 제거하고 제출해볼 것.
+
 <br>
 
 ## 3. Kotlin
